@@ -1,54 +1,993 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ernesto José Villalba Castro</title>
-  <meta name="description" content="Sitio web oficial de Ernesto José Villalba Castro, autor de 'Con la muerte a cuestas' y 'Prisión... Principio o Fin'.">
-  <meta name="keywords" content="Con la muerte a cuestas, Prisión Principio o Fin, Ernesto José Villalba Castro, libros, conflicto armado, novela colombiana">
-  <meta name="author" content="Ernesto José Villalba Castro">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ernesto José Villalba Castro - Escritor | Con la muerte a cuestas</title>
+    <meta name="description" content="Sitio web oficial de Ernesto José Villalba Castro, autor de 'Con la muerte a cuestas - Apartes de una guerra. Medellín' y 'Prisión... Principio o Fin - Un ingreso virtual'.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --primary: #1e293b;         /* Deep slate gray */
+            --primary-hover: #0f172a;   /* Darker slate */
+            --accent: #a16207;          /* Bronze/copper */
+            --accent-hover: #92400e;    /* Darker bronze */
+            --secondary: #374151;       /* Charcoal gray */
+            --warm-white: #fefdfb;      /* Warm white */
+            --light-gray: #f8fafc;      /* Light gray */
+            --text-primary: #1f2937;    /* Dark gray for text */
+            --text-secondary: #6b7280;  /* Medium gray for secondary text */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--warm-white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--warm-white);
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--warm-white);
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-accent:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            padding: 12px 32px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--warm-white);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--warm-white) 50%, #f1f5f9 100%);
+        }
+
+        .gradient-bg-2 {
+            background: linear-gradient(90deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .gradient-bg-3 {
+            background: linear-gradient(135deg, #f1f5f9 0%, var(--light-gray) 100%);
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(30, 41, 59, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -3px rgba(30, 41, 59, 0.15);
+        }
+
+        .nav-fixed {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: none;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .timeline-item {
+            border-left: 3px solid var(--accent);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            position: absolute;
+            left: -7.5px;
+            top: 0.5rem;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--secondary) 50%, transparent 100%);
+            margin: 3rem 0;
+        }
+
+        .quote-highlight {
+            border-left: 4px solid var(--accent);
+            background: linear-gradient(90deg, rgba(161, 98, 7, 0.05) 0%, transparent 100%);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            margin: 2rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            background-color: white;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(161, 98, 7, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .error-message {
+            color: #dc2626;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .book-selected {
+            border: 2px solid var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(161, 98, 7, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-toggle {
+                display: none;
+            }
+        }
+    </style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
-  <header class="text-center py-8 bg-gray-100">
-    <h1 class="text-3xl font-bold">Ernesto José Villalba Castro</h1>
-    <p class="text-lg">Autor de obras que reflejan la realidad del conflicto y la transformación personal</p>
-  </header>
+<body class="smooth-scroll">
+    <!-- Navegación -->
+    <nav class="nav-fixed">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold cursor-pointer" style="color: var(--primary);" onclick="scrollToSection('inicio')">
+                        Ernesto José Villalba Castro
+                    </h1>
+                </div>
+                
+                <!-- Navegación Desktop -->
+                <div class="desktop-menu">
+                    <div class="flex space-x-8">
+                        <button onclick="scrollToSection('inicio')" class="text-gray-700 hover:text-slate-800 transition-colors duration-200 font-medium">Inicio</button>
+                        <button onclick="scrollToSection('libros')" class="text-gray-700 hover:text-slate-800 transition-colors duration-200 font-medium">Libros</button>
+                        <button onclick="scrollToSection('sobre-mi')" class="text-gray-700 hover:text-slate-800 transition-colors duration-200 font-medium">Sobre Mí</button>
+                        <button onclick="scrollToSection('contacto')" class="text-gray-700 hover:text-slate-800 transition-colors duration-200 font-medium">Contacto</button>
+                    </div>
+                </div>
+                
+                <!-- Botón menú móvil -->
+                <button class="mobile-toggle text-gray-700 hover:text-slate-800" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+            
+            <!-- Menú móvil -->
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <button onclick="scrollToSection('inicio'); closeMobileMenu()" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-slate-800 transition-colors duration-200">Inicio</button>
+                    <button onclick="scrollToSection('libros'); closeMobileMenu()" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-slate-800 transition-colors duration-200">Libros</button>
+                    <button onclick="scrollToSection('sobre-mi'); closeMobileMenu()" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-slate-800 transition-colors duration-200">Sobre Mí</button>
+                    <button onclick="scrollToSection('contacto'); closeMobileMenu()" class="block w-full text-left px-3 py-2 text-gray-700 hover:text-slate-800 transition-colors duration-200">Contacto</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <main class="max-w-4xl mx-auto p-4">
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4">Con la muerte a cuestas</h2>
-      <img src="assets/libro1.jpg" alt="Portada del libro Con la muerte a cuestas" class="mb-4 rounded shadow">
-      <p>
-        Una obra que retrata los apartes más duros de la guerra en Medellín desde la perspectiva de un ex policía. Historia real, cruda, humana.
-      </p>
+    <!-- Sección Hero -->
+    <section id="inicio" class="pt-16 pb-12 sm:pt-20 sm:pb-20 min-h-screen flex items-center gradient-bg">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="order-2 lg:order-1">
+                    <img src="attached_assets/f3d2ca09-3803-45c0-9b15-5608993ad20a.png" 
+                         alt="Ernesto José Villalba Castro - Escritor" 
+                         class="rounded-lg shadow-2xl w-full h-auto max-w-md mx-auto lg:mx-0 max-h-[300px] sm:max-h-none">
+                </div>
+                <div class="order-1 lg:order-2 text-center lg:text-left">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style="color: var(--primary);">
+                        Narrando historias de guerra y humanidad
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Escritor contemporáneo especializado en narrativa de conflicto armado y testimonios de guerra. 
+                        Autor de "Con la muerte a cuestas - Apartes de una guerra. Medellín", una obra que explora la realidad del conflicto armado.
+                    </p>
+                    <div class="flex flex-col sm:flex-row sm:gap-4 gap-2 justify-center lg:justify-start">
+                        <button onclick="scrollToSection('libros')" class="btn-primary">
+                            <i class="fas fa-book-open"></i>
+                            Explorar Libros
+                        </button>
+                        <button onclick="scrollToSection('contacto')" class="btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            Contactar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-2xl font-semibold mb-4">Prisión... Principio o Fin</h2>
-      <img src="assets/libro2.jpg" alt="Portada del libro Prisión... Principio o Fin" class="mb-4 rounded shadow">
-      <p>
-        Un ingreso virtual al sistema penitenciario colombiano. Un hombre encuentra en la escritura una vía de redención y libertad interior.
-      </p>
+    <!-- Divisor de sección -->
+    <div class="section-divider"></div>
+
+    <!-- Sección Libros -->
+    <section id="libros" class="py-12 sm:py-16 md:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold mb-4" style="color: var(--primary);">Mis Libros</h3>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Una colección de historias que exploran la condición humana, el conflicto armado y la esperanza.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
+                <!-- Libro Principal 1 -->
+                <div class="card group cursor-pointer transition-all duration-300" id="book-muerte" onclick="toggleBookSynopsis('muerte')">
+                    <img src="attached_assets/image_1748537351886.png" 
+                         alt="Con la muerte a cuestas - Apartes de una guerra. Medellín" 
+                         class="w-full h-auto object-cover">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold mb-2" style="color: var(--primary);">Con la muerte a cuestas</h4>
+                        <p class="text-lg text-gray-500 mb-4">Apartes de una guerra. Medellín</p>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            Un policía colombiano graduado con honores se ve envuelto en una serie de crímenes tras el asesinato de un compañero por órdenes de Pablo Escobar Gaviria. Una historia de sangre que lo llevó a perder su cordura.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">2024</span>
+                            <span class="font-semibold" style="color: var(--accent);">Narrativa Policial</span>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <span class="text-sm font-medium flex items-center justify-center gap-2" style="color: #2563eb;" id="muerte-toggle-text">
+                                <i class="fas fa-eye text-sm"></i>
+                                Ver sinopsis completa
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Libro Principal 2 -->
+                <div class="card group cursor-pointer transition-all duration-300" id="book-prision" onclick="toggleBookSynopsis('prision')">
+                    <img src="attached_assets/image_1748535753135.png" 
+                         alt="Prisión... Principio o Fin - Un ingreso virtual" 
+                         class="w-full h-auto object-cover">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold mb-2" style="color: var(--primary);">Prisión... Principio o Fin</h4>
+                        <p class="text-lg text-gray-500 mb-4">Un ingreso virtual</p>
+                        <p class="text-gray-600 mb-4 line-clamp-3">
+                            Un hombre desesperado por recuperar su libertad decide escribir un libro como estrategia para conseguir una rebaja a su exagerada pena de 104 años. Sin querer descubre el poder transformador de su escritura.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">2024</span>
+                            <span class="font-semibold" style="color: var(--accent);">Crónicas Reales</span>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <span class="text-sm font-medium flex items-center justify-center gap-2" style="color: #2563eb;" id="prision-toggle-text">
+                                <i class="fas fa-eye text-sm"></i>
+                                Ver sinopsis completa
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sinopsis detallada - Con la muerte a cuestas -->
+            <div class="max-w-4xl mx-auto mb-12 animate-fade-in" id="synopsis-muerte" style="display: none;">
+                <div class="card p-8" style="border-left: 4px solid var(--accent);">
+                    <h4 class="text-3xl font-bold mb-6 text-center" style="color: var(--primary);">
+                        Con la muerte a cuestas - Sinopsis Completa
+                    </h4>
+                    <div class="quote-highlight">
+                        <p class="text-lg leading-relaxed mb-4">
+                            Un policía colombiano, graduado con honores y nombrado en 1993 como mejor policía en Medellín Antioquia, se ve envuelto en una serie de crímenes, en principio motivado por el asesinato de uno de sus compañeros, por órdenes del capo, Pablo Escobar Gaviria.
+                        </p>
+                        <p class="text-lg leading-relaxed mb-4">
+                            Un accidentado daño colateral que lo llevó, dos años más tarde, a ser acusado y condenado por una serie de homicidios. Hoy confiesa parte de esas historias de sangre que lo llevaron a perder su cordura, llegando a considerar que el juicio más corto y la condena más efectiva es la muerte.
+                        </p>
+                        <p class="text-lg leading-relaxed mb-4">
+                            Esta obra nos sumerge en los años más violentos de la historia reciente de Colombia, cuando el narcotráfico y la guerra urbana transformaron ciudades como Medellín en campos de batalla. A través de los ojos de un policía que perdió todo, incluyendo su humanidad, el lector es testigo de cómo la violencia corrompe incluso a aquellos que juran proteger y servir.
+                        </p>
+                        <p class="text-lg leading-relaxed">
+                            "Con la muerte a cuestas" no es solo una crónica del conflicto armado; es el testimonio desgarrador de un hombre que navegó por las aguas turbulentas de la venganza, la justicia y la supervivencia en un mundo donde las líneas entre el bien y el mal se desdibujan hasta desaparecer.
+                        </p>
+                    </div>
+                    <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                        <p class="text-sm text-gray-600 italic">
+                            "Una narrativa cruda que expone la realidad del conflicto armado colombiano desde la perspectiva de quien vivió en primera persona los años más duros de la violencia urbana."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sinopsis detallada - Prisión... Principio o Fin -->
+            <div class="max-w-4xl mx-auto mb-12 animate-fade-in" id="synopsis-prision" style="display: none;">
+                <div class="card p-8" style="border-left: 4px solid var(--accent);">
+                    <h4 class="text-3xl font-bold mb-6 text-center" style="color: var(--primary);">
+                        Prisión... Principio o Fin - Sinopsis Completa
+                    </h4>
+                    <div class="quote-highlight">
+                        <p class="text-lg leading-relaxed mb-4">
+                            Desesperado por recuperar su libertad, un hombre decide escribir un libro, como un plan estratégico para conseguir una rebaja más, a su exagerada pena (104 años). Sin querer descubre, entre uno y otro comentario, el interés que ha despertado su obra.
+                        </p>
+                        <p class="text-lg leading-relaxed mb-4">
+                            Un accidentado resultado que despertó elogios por la capacidad de narrar crónicas, en las que el autor mismo, fue el primer sorprendido, pues hasta ese momento no sabía cómo definir su particular forma de contar las diferentes historias de crímenes reales.
+                        </p>
+                        <p class="text-lg leading-relaxed mb-4">
+                            Esta obra es más que un libro; es un testimonio de transformación personal. El autor nos lleva a través de su proceso de autodescubrimiento dentro de las paredes de la prisión, donde el acto de escribir se convierte en una herramienta de supervivencia y, inesperadamente, en un camino hacia la redención.
+                        </p>
+                        <p class="text-lg leading-relaxed">
+                            "Prisión... Principio o Fin" explora las profundidades del sistema penitenciario colombiano, las historias no contadas de quienes habitan tras las rejas, y el poder transformador de la palabra escrita. Es una reflexión sobre segundas oportunidades, el perdón y la posibilidad de encontrar propósito incluso en las circunstancias más adversas.
+                        </p>
+                    </div>
+                    <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                        <p class="text-sm text-gray-600 italic">
+                            "Un ingreso virtual a la realidad carcelaria que se convierte en una experiencia de transformación personal a través del poder sanador de la escritura."
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="https://wa.me/573115651306?text=Hola,%20estoy%20interesado%20en%20adquirir%20sus%20libros.%20¿Podrían%20darme%20más%20información?" 
+                   class="btn-accent" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+        </div>
     </section>
 
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-4">Sobre el autor</h2>
-      <img src="assets/portada.jpg" alt="Ernesto José Villalba Castro" class="mb-4 rounded shadow max-w-xs mx-auto">
-      <p>
-        Ernesto José Villalba Castro, nacido en Barranquilla, es ex miembro de la fuerza pública y ahora escritor de narrativa testimonial sobre conflicto armado y redención.
-      </p>
+    <!-- Divisor de sección -->
+    <div class="section-divider"></div>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="py-12 sm:py-16 md:py-20 gradient-bg-2">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold mb-4" style="color: var(--primary);">Sobre Mí</h3>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Una vida marcada por experiencias intensas que han forjado mi perspectiva como escritor.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <div class="card p-8">
+                        <h4 class="text-2xl font-bold mb-6" style="color: var(--primary);">Mi Historia</h4>
+                        
+                        <div class="quote-highlight">
+                            <p class="text-lg mb-4">
+                                "Ernesto José Villalba Castro, nacido en Barranquilla Colombia, el 8 de marzo de 1969."
+                            </p>
+                        </div>
+                        
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Graduado como técnico en construcción, reservista de las fuerzas militares y ex miembro 
+                            de la fuerza pública. Condenado por homicidio múltiple a la más alta pena de la legislación 
+                            colombiana y recluido en seis diferentes penales, algunos clasificados como los más 
+                            peligrosos en Latinoamérica.
+                        </p>
+                        
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            Durante seis años hizo parte de las mesas de trabajo por la paz, primer puesto en 
+                            concurso nacional de pintura, coordinador del proyecto Delinquir... no paga en la 
+                            penitenciaría de Itagüí, y lo más importante: ha podido sobrevivir durante 18 largos 
+                            años en prisión.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="card p-8">
+                        <h4 class="text-2xl font-bold mb-6" style="color: var(--primary);">Trayectoria</h4>
+                        
+                        <div class="timeline-item">
+                            <h5 class="font-bold text-lg mb-2" style="color: var(--accent);">1969</h5>
+                            <p class="text-gray-700">Nacimiento en Barranquilla, Colombia</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h5 class="font-bold text-lg mb-2" style="color: var(--accent);">Formación</h5>
+                            <p class="text-gray-700">Técnico en construcción, reservista de fuerzas militares</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h5 class="font-bold text-lg mb-2" style="color: var(--accent);">Experiencia carcelaria</h5>
+                            <p class="text-gray-700">18 años en diferentes penales, incluyendo los más peligrosos de Latinoamérica</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h5 class="font-bold text-lg mb-2" style="color: var(--accent);">Trabajo por la paz</h5>
+                            <p class="text-gray-700">6 años participando en mesas de trabajo por la paz</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h5 class="font-bold text-lg mb-2" style="color: var(--accent);">Escritura</h5>
+                            <p class="text-gray-700">Autor de obras que transforman experiencias en narrativas de esperanza</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="text-center mt-12">
-      <a href="https://wa.me/573115651306" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded inline-block">
-        Contactar por WhatsApp
-      </a>
-    </section>
-  </main>
+    <!-- Divisor de sección -->
+    <div class="section-divider"></div>
 
-  <footer class="bg-gray-200 text-center text-sm py-6 mt-12">
-    &copy; 2025 Ernesto José Villalba Castro. Todos los derechos reservados.
-  </footer>
+    <!-- Sección Contacto -->
+    <section id="contacto" class="py-12 sm:py-16 md:py-20 gradient-bg-3">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold mb-4" style="color: var(--primary);">Contacto</h3>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    ¿Tienes alguna pregunta o quieres conocer más sobre mis libros? No dudes en contactarme.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Formulario de contacto -->
+                <div class="card p-8">
+                    <h4 class="text-2xl font-bold mb-6" style="color: var(--primary);">Envíame un mensaje</h4>
+                    
+<form id="contact-form">
+    <div class="form-group">
+        <label for="name" class="form-label">Nombre completo</label>
+        <input type="text" id="name" name="name" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input type="email" id="email" name="email" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label for="subject" class="form-label">Asunto</label>
+        <input type="text" id="subject" name="subject" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label for="message" class="form-label">Mensaje</label>
+        <textarea id="message" name="message" class="form-textarea" required></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary w-full">
+        <i class="fas fa-paper-plane"></i> Enviar mensaje
+    </button>
+
+    <div id="success-message" class="mt-4 text-green-600 text-center" style="display: none;">
+        ¡Mensaje enviado exitosamente! Te responderé pronto.
+    </div>
+</form>
+<script>
+document.getElementById("contact-form").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const data = new FormData(form);
+
+    try {
+        const response = await fetch("https://formspree.io/f/mzzgglkr", {
+            method: "POST",
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            form.reset();
+            document.getElementById("success-message").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("success-message").style.display = "none";
+            }, 5000);
+        } else {
+            alert("Hubo un error al enviar el mensaje. Inténtalo de nuevo más tarde.");
+        }
+    } catch (error) {
+        alert("Error de red. Por favor revisa tu conexión.");
+    }
+});
+</script>
+
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="space-y-8">
+                    <div class="contact-info rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Información de contacto</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                        <i class="fab fa-whatsapp text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">WhatsApp</h4>
+                                    <p class="text-white/90">+57 311 565 1306</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Email</h4>
+                                    <p class="text-white/90">garciavasquezalexander91@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Ubicación</h4>
+                                    <p class="text-white/90">Barranquilla, Colombia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Redes sociales -->
+                    <div class="card p-8">
+                        <h3 class="text-xl font-bold mb-6" style="color: var(--primary);">Sígueme en redes sociales</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg border border-gray-200 hover:border-[var(--accent)] transition-colors">
+                                <i class="fab fa-facebook text-blue-600 text-xl"></i>
+                                <span class="font-medium">Facebook</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg border border-gray-200 hover:border-[var(--accent)] transition-colors">
+                                <i class="fab fa-twitter text-blue-400 text-xl"></i>
+                                <span class="font-medium">Twitter</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg border border-gray-200 hover:border-[var(--accent)] transition-colors">
+                                <i class="fab fa-instagram text-pink-600 text-xl"></i>
+                                <span class="font-medium">Instagram</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg border border-gray-200 hover:border-[var(--accent)] transition-colors">
+                                <i class="fab fa-linkedin text-blue-700 text-xl"></i>
+                                <span class="font-medium">LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Disponibilidad -->
+                    <div class="card p-8">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--primary);">Disponibilidad</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <span>Entrevistas y conferencias</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <span>Colaboraciones académicas</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <span>Proyectos editoriales (limitado)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--primary); color: white;" class="py-12">
+        <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Ernesto José Villalba Castro</h3>
+                    <p class="text-gray-300 mb-4">
+                        Escritor especializado en narrativa de conflicto armado y testimonios de guerra. 
+                        Comprometido con la preservación de la memoria histórica.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Enlaces rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><button onclick="scrollToSection('inicio')" class="text-gray-300 hover:text-white transition-colors">Inicio</button></li>
+                        <li><button onclick="scrollToSection('libros')" class="text-gray-300 hover:text-white transition-colors">Libros</button></li>
+                        <li><button onclick="scrollToSection('sobre-mi')" class="text-gray-300 hover:text-white transition-colors">Sobre Mí</button></li>
+                        <li><button onclick="scrollToSection('contacto')" class="text-gray-300 hover:text-white transition-colors">Contacto</button></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p>garciavasquezalexander91@gmail.com</p>
+                        <p>+57 311 565 1306</p>
+                        <p>Barranquilla, Colombia</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Ernesto José Villalba Castro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573115651306" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        let mobileMenuOpen = false;
+        let selectedBook = null;
+
+        // Funciones de navegación
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                const navHeight = 80;
+                const elementPosition = element.offsetTop - navHeight;
+                
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function toggleMobileMenu() {
+            mobileMenuOpen = !mobileMenuOpen;
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            if (mobileMenuOpen) {
+                menu.classList.add('active');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                menu.classList.remove('active');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        function closeMobileMenu() {
+            mobileMenuOpen = false;
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            
+            menu.classList.remove('active');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+
+        // Funciones para los libros
+        function toggleBookSynopsis(bookId) {
+            const synopsis = document.getElementById(`synopsis-${bookId}`);
+            const bookCard = document.getElementById(`book-${bookId}`);
+            const toggleText = document.getElementById(`${bookId}-toggle-text`);
+            
+            if (selectedBook === bookId) {
+                // Cerrar sinopsis actual
+                synopsis.style.display = 'none';
+                bookCard.classList.remove('book-selected');
+                toggleText.innerHTML = '<i class="fas fa-eye text-sm"></i> Ver sinopsis completa';
+                toggleText.style.color = '#2563eb';
+                selectedBook = null;
+            } else {
+                // Cerrar sinopsis anterior si existe
+                if (selectedBook) {
+                    const prevSynopsis = document.getElementById(`synopsis-${selectedBook}`);
+                    const prevBookCard = document.getElementById(`book-${selectedBook}`);
+                    const prevToggleText = document.getElementById(`${selectedBook}-toggle-text`);
+                    
+                    prevSynopsis.style.display = 'none';
+                    prevBookCard.classList.remove('book-selected');
+                    prevToggleText.innerHTML = '<i class="fas fa-eye text-sm"></i> Ver sinopsis completa';
+                    prevToggleText.style.color = '#2563eb';
+                }
+                
+                // Mostrar nueva sinopsis
+                synopsis.style.display = 'block';
+                bookCard.classList.add('book-selected');
+                toggleText.innerHTML = '<i class="fas fa-eye-slash text-sm"></i> Ocultar sinopsis';
+                toggleText.style.color = 'var(--accent)';
+                selectedBook = bookId;
+            }
+        }
+
+        // Funciones del formulario de contacto
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Limpiar errores previos
+            clearFormErrors();
+            
+            // Obtener datos del formulario
+            const formData = new FormData(event.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+            
+            // Validar formulario
+            if (validateForm(data)) {
+                // Simular envío exitoso
+                showSuccessMessage();
+                event.target.reset();
+            }
+        }
+
+        function validateForm(data) {
+            let isValid = true;
+            
+            if (!data.name.trim()) {
+                showFieldError('name', 'El nombre es requerido');
+                isValid = false;
+            }
+            
+            if (!data.email.trim() || !isValidEmail(data.email)) {
+                showFieldError('email', 'Email válido es requerido');
+                isValid = false;
+            }
+            
+            if (!data.subject) {
+                showFieldError('subject', 'Selecciona un asunto');
+                isValid = false;
+            }
+            
+            if (!data.message.trim() || data.message.trim().length < 10) {
+                showFieldError('message', 'El mensaje debe tener al menos 10 caracteres');
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function showFieldError(fieldName, message) {
+            const errorElement = document.getElementById(`${fieldName}-error`);
+            errorElement.textContent = message;
+        }
+
+        function clearFormErrors() {
+            const errorElements = document.querySelectorAll('.error-message');
+            errorElements.forEach(element => {
+                element.textContent = '';
+            });
+        }
+
+        function showSuccessMessage() {
+            const successMessage = document.getElementById('success-message');
+            successMessage.style.display = 'block';
+            
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // Event listeners para efectos de scroll en la navegación
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav-fixed');
+            if (nav) {
+                if (window.scrollY > 50) {
+                    nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                    nav.style.backdropFilter = 'blur(15px)';
+                } else {
+                    nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                    nav.style.backdropFilter = 'blur(10px)';
+                }
+            }
+        });
+
+        // Cerrar menú móvil al hacer clic fuera de él
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobile-menu');
+            const toggle = document.querySelector('.mobile-toggle');
+            
+            if (mobileMenuOpen && menu && toggle && 
+                !menu.contains(event.target) && !toggle.contains(event.target)) {
+                closeMobileMenu();
+            }
+        });
+    </script>
 </body>
 </html>
