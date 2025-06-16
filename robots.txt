@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alexxgar.github.io/ERNESTO-JOSE-VILLALBA-CASTRO/sitemap.xml
